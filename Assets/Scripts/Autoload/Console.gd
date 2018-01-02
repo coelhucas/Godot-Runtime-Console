@@ -5,19 +5,23 @@ extends Control
 
 onready var DebugCommands = preload("res://Assets/Scripts/Autoload/DebugCommands.gd")
 
+onready var console = get_node("/root/main/GUI/Console")
+
 onready var input = get_node("/root/main/GUI/Console/Input")
 onready var debug_log = get_node("/root/main/GUI/Console/Debug")
 
 var debug = []
 var commands = {}
 
+var active = true
+
 func _ready():
 	
 	debug_log.set_scroll_follow(true)
-	debug_log.append_bbcode("© 2018 By Lucas Coelho - Welcome to my Console Debug System use [color=#66ccff]help[/color] to see avaliable commands.")
+	debug_log.append_bbcode("© 2018 By Lucas Coelho - Welcome to my Console Debug System use [color=#66ccff]help[/color] to see avaliable commands. Feel free to make your improvements. [color=#ff9933]GITHUB[/color]: https://github.com/lcrabbit/Godot-Runtime-Console [color=#ff9933]Itch.io[/color]: https://lcrabbit.itch.io/")
 	
 	register_command("help", {
-		description = "Show avaliable commands.",
+		description = "Shows avaliable commands.",
 		args = "",
 		num_args = 0
 		})
@@ -56,6 +60,9 @@ func _input(event):
 	if event.is_action_pressed("ui_select"):
 		if !input.text.empty():
 			handle_command(input.text)
+	
+	if event.is_action_pressed("toggle_console"):
+		toggle_console()
 
 
 func register_command(name, args):
@@ -91,3 +98,11 @@ func handle_command(text):
 				DebugCommands.call(cmd[0].replace(".", ""), cmd[1])
 			elif command.num_args == 2:
 				DebugCommands.call(cmd[0].replace(".", ""), cmd[1], cmd[2])
+
+func toggle_console():
+	if active:
+		active = false
+		console.visible = false
+	else:
+		active = true
+		console.visible = true
