@@ -5,7 +5,9 @@ In-Game console to Godot 3.0 for debugging purposes
 
 Still have some work to do. Some instructions below:
 
-Press Insert to send the command.
+Observations:
+- Press Insert to send the command.
+- Stay tuned in the nodes paths, otherwise you can get errors.
 
 default commands:
 
@@ -14,8 +16,7 @@ help = show registered commands
 echo <string> = print what you write after it.
   
 show <variable> = print the value of some variable (must be stored in Globals.gd)
-  
-  
+#
 example commands:
 
 get_position = get a Vector2 position of your player (I've made a KinematicBody2D to show how it would be)
