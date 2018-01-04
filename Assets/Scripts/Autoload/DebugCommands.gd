@@ -22,11 +22,12 @@ static func show(variable):
 # Some example optional commands to show how it works
 static func get_position():
 	# Print Player Position
-	Console.append_bbcode(">[color=#ff9933] " + str(Globals.player.get_global_position()) + "[/color]")
+	Console.append_bbcode(">[color=#ff9933] " + str(Globals.player.get_global_position()) + "[/color]\n")
 
 static func set_position(x, y):
 	Globals.player.set_global_position(Vector2(x, y))
 
 static func scene(name):
 	#SceneTree.change_scene
-	Globals.get_tree().change_scene("res://Assets/Scenes/" + name + ".tscn")
+	var scene_name = name.replace("scene ", "")
+	Globals.get_tree().change_scene("res://Assets/Scenes/" + scene_name + ".tscn")

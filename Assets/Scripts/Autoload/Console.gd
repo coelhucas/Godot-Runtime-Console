@@ -21,40 +21,40 @@ func _ready():
 	debug_log.append_bbcode("© 2018 By Lucas Coelho - Welcome to my Console Debug System use [color=#66ccff]help[/color] to see avaliable commands. Feel free to make your improvements. [color=#ff9933]GITHUB[/color]: https://github.com/lcrabbit/Godot-Runtime-Console [color=#ff9933]Itch.io[/color]: https://lcrabbit.itch.io/")
 	
 	register_command("help", {
-		description = "Shows avaliable commands.",
-		args = "",
-		num_args = 0
-		})
+			description = "Shows avaliable commands.",
+			args = "",
+			num_args = 0
+			})
 	
 	register_command("echo", {
-			description = "Prints a string in console",
-			args = "+ <string>",
-			num_args = 1
-		})
+				description = "Prints a string in console",
+				args = "+ <string>",
+				num_args = 1
+			})
 		
 	register_command("show", {
-			description = "Prints a variable in console",
-			args = "+ <variable_name>",
-			num_args = 1
-		})
+				description = "Prints a variable in console",
+				args = "+ <variable_name>",
+				num_args = 1
+			})
 	
 	register_command("get_position", {
-		description = "Returns a Vector2 of Player's position.",
-		args = "",
-		num_args = 0
-		})
+			description = "Returns a Vector2 of Player's position.",
+			args = "",
+			num_args = 0
+			})
 	
 	register_command("set_position", {
-		description = "Set Player's position using X and Y Vector2 coordinates",
-		args = "<Vector2 X and Y>",
-		num_args = 2
-		})
+			description = "Set Player's position using X and Y Vector2 coordinates",
+			args = "<Vector2 X and Y>",
+			num_args = 2
+			})
 		
 	register_command("scene", {
-		description = "Goes to specified scene",
-		args = "<Scene_name>",
-		num_args = 1
-		})
+			description = "Goes to specified scene",
+			args = "<Scene_name>",
+			num_args = 1
+			})
 
 func _input(event):
 	if event.is_action_pressed("ui_select"):
@@ -95,7 +95,7 @@ func handle_command(text):
 			if command.num_args == 0:
 				DebugCommands.call(cmd[0].replace(".",""))
 			elif command.num_args < 2:
-				DebugCommands.call(cmd[0].replace(".", ""), cmd[1])
+				DebugCommands.call(cmd[0].replace(".", ""), text)
 			elif command.num_args == 2:
 				DebugCommands.call(cmd[0].replace(".", ""), cmd[1], cmd[2])
 
