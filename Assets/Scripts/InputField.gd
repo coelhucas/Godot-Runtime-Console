@@ -1,4 +1,4 @@
-extends TextEdit
+extends LineEdit
 
 var command
 

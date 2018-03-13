@@ -18,7 +18,7 @@ var active = true
 func _ready():
 	
 	debug_log.set_scroll_follow(true)
-	debug_log.append_bbcode("© 2018 By Lucas Coelho - Welcome to my Console Debug System use [color=#66ccff]help[/color] to see avaliable commands. Feel free to make your improvements. [color=#ff9933]GITHUB[/color]: https://github.com/lcrabbit/Godot-Runtime-Console [color=#ff9933]Itch.io[/color]: https://lcrabbit.itch.io/")
+	debug_log.append_bbcode("\n \n \n© 2018 By Lucas Coelho - Welcome to my Console Debug System use [color=#66ccff]help[/color] to see avaliable commands. Feel free to make your improvements. [color=#ff9933]GITHUB[/color]: https://github.com/lcrabbit/Godot-Runtime-Console [color=#ff9933]Itch.io[/color]: https://lcrabbit.itch.io/")
 	
 	register_command("help", {
 			description = "Shows avaliable commands.",
@@ -82,7 +82,6 @@ func describe_command(cmd):
 		append_bbcode("[color=#66ccff]" + cmd + ":[/color] " + description + " [color=#ccff99](usage: " + cmd + ")[/color]\n")
 
 func handle_command(text):
-	input.cursor_set_line(0)
 	var cmd = text.split(" ", true)
 	
 	if commands.has(cmd[0]):
@@ -105,4 +104,5 @@ func toggle_console():
 		console.visible = false
 	else:
 		active = true
+		input.select_all()
 		console.visible = true
