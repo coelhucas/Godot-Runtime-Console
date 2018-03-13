@@ -1,7 +1,7 @@
 # Godot-Runtime-Console
 In-Game console to Godot 3.0 for debugging purposes
 
-![Alt Text](https://i.imgur.com/lf823rW.png)
+![Alt Text](https://i.imgur.com/Xk81Z67.png)
 
 Still have some work to do. Some instructions below:
 
