@@ -1,15 +1,7 @@
 extends Node
 
-onready var player = get_node("/root/main/Player")
+onready var player = get_node("/root/" + Console.main_scene_name + "/Player")
 
+# This script is just to exemplify the show command.
+# The variable to be showed must be declared here.
 var hp = 10
-
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass

@@ -17,6 +17,9 @@ static func echo(text):
 static func show(variable):
 	# Erase "show" from the output
 	variable.erase(0, 5)
+	if (str(Globals.get(variable)) == null):
+		Console.append_bbcode(">[color=#ff9933] " + variable + "[/color]: Null or not declared.\n")
+		return
 	Console.append_bbcode(">[color=#ff9933] " + variable + "[/color]: " + str(Globals.get(variable)) + "\n")
 
 # Some example optional commands to show how it works

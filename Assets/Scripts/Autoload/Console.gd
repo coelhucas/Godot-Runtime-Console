@@ -4,11 +4,11 @@
 extends Control
 
 onready var DebugCommands = preload("res://Assets/Scripts/Autoload/DebugCommands.gd")
+onready var main_scene_name : String = "Main"
+onready var console = get_node("/root/" + main_scene_name + "/GUI/Console")
 
-onready var console = get_node("/root/main/GUI/Console")
-
-onready var input = get_node("/root/main/GUI/Console/Input")
-onready var debug_log = get_node("/root/main/GUI/Console/Debug")
+onready var input = get_node("/root/" + main_scene_name + "/GUI/Console/Input")
+onready var debug_log = get_node("/root/" + main_scene_name + "/GUI/Console/Debug")
 
 var debug = []
 var commands = {}
