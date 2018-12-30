@@ -12,7 +12,10 @@ static func echo(text):
 	# Erase "echo" from the output
 	text.erase(0, 5)
 	Console.append_bbcode(">[color=#ff9933] " + text + "[/color]\n")
-	
+
+static func clear():
+	Console.clear()
+
 # This "variable" argument must be in Globals.gd
 static func show(variable):
 	# Erase "show" from the output
@@ -33,4 +36,7 @@ static func set_position(x, y):
 static func scene(name):
 	#SceneTree.change_scene
 	var scene_name = name.replace("scene ", "")
+	if (scene_name.replace(" ", "").empty()):
+		Console.append_bbcode("Please use a valid scene name.\n")
+		return
 	Globals.get_tree().change_scene("res://Assets/Scenes/" + scene_name + ".tscn")

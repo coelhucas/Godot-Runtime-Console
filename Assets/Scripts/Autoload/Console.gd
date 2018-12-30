@@ -26,6 +26,12 @@ func _ready():
 			num_args = 0
 			})
 	
+	register_command("clear", {
+		description = "Clears log.",
+		args = "",
+		num_args = 0
+		})
+	
 	register_command("echo", {
 				description = "Prints a string in console",
 				args = "+ <string>",
@@ -64,12 +70,14 @@ func _input(event):
 	if event.is_action_pressed("toggle_console"):
 		toggle_console()
 
-
 func register_command(name, args):
 	commands[name] = args
 
 func append_bbcode(bbcode):
 	debug_log.set_bbcode(debug_log.get_bbcode() + bbcode)
+
+func clear():
+	debug_log.set_bbcode("")
 
 func describe_command(cmd):
 	var command = commands[cmd]

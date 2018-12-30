@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 316.536, 127.003 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+
