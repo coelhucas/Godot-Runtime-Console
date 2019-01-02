@@ -6,7 +6,6 @@ In-Game console to Godot 3.0+ for debugging purposes
 Still have some work to do. Some instructions below:
 
 Observations:
-- Press Insert to send the command.
 - Stay tuned in the nodes paths, otherwise you can get errors.
 
 Default commands:
