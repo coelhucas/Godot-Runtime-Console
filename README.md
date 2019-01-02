@@ -28,7 +28,7 @@ Default commands:
 - scene <name> = goes to specified scene. (must be in Assets/Scenes/ folder)
   
 # Adding a new Command:
-  - First of all you'll need to call `register_command` function [`Assets/Scripts/Autoload/Console.gd`], with takes a string `name` and an `args` object with `description`, `args`(both to be showed on the log) and `num_args` fields.
+  - First of all you'll need to call `register_command` function [`Assets/Scripts/Autoload/Console.gd`], which takes a string `name` and an `args` object with `description`, `args`(both to be showed on the log) and `num_args` fields.
   
   - Then you simply make a function with **the same name** as your `name` declared onto register_command calling, and setup your command actions inside this function.
 
