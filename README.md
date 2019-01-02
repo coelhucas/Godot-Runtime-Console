@@ -1,5 +1,5 @@
 # Godot-Runtime-Console
-In-Game console to Godot 3.0 for debugging purposes
+In-Game console to Godot 3.0+ for debugging purposes
 
 ![Alt Text](https://i.imgur.com/Xk81Z67.png)
 
@@ -31,4 +31,6 @@ Default commands:
   - First of all you'll need to call `register_command` function [`Assets/Scripts/Autoload/Console.gd`], with takes a string `name` and an `args` object with `description`, `args`(both to be showed on the log) and `num_args` fields.
   
   - Then you simply make a function with **the same name** as your `name` declared onto register_command calling, and setup your command actions inside this function.
-  
+
+# Disclaimer:
+This console was made with the same base logic than [Calinou's one](https://github.com/Calinou/godot-console), which was made for 2.1.
