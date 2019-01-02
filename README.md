@@ -16,11 +16,19 @@ Default commands:
 - echo <string> = print what you write after it.
   
 - show <variable> = print the value of some variable (must be stored in Globals.gd)
-#
-Example commands:
+  
+- clear = clears log.
+
+# Example commands:
 
 - get_position = get a Vector2 position of your player (I've made a KinematicBody2D to show how it would be)
 
 - set_position <Vector2 X Y> = set the set-up player position 
 
 - scene <name> = goes to specified scene. (must be in Assets/Scenes/ folder)
+  
+  # Adding a new Command:
+  - First of all you'll need to call `register_command` function [`Assets/Scripts/Autoload/Console.gd`], with takes a string `name` and an `args` object with `description`, `args`(both to be showed on the log) and `num_args` fields.
+  
+  - Then you simply make a function with **the same name** as your `name` declared onto register_command calling, and setup your command actions inside this function.
+  
